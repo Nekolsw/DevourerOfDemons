@@ -13,8 +13,17 @@ UCLASS()
 class DEVOUREROFDEMONS_API UCostGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
-	
+
 public:
-	UPROPERTY(EditDefaultsOnly)
-	float Cost;
+	UPROPERTY(EditAnywhere, Category = "Cost")
+	float CostAbility;
+
+	UCostGameplayAbility();
+
+	void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData);
+
+	void ApplyCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) const override;
+
+	bool CheckCost(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, OUT FGameplayTagContainer* OptionalRelevantTags) const override;
+
 };
