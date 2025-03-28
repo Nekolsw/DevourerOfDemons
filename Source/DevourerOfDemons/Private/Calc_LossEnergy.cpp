@@ -3,9 +3,7 @@
 
 #include "Calc_LossEnergy.h"
 #include "HeroAttributeSet.h"
-
 #include "CostGameplayAbility.h"
-
 
 
 float UCalc_LossEnergy::CalculateBaseMagnitude_Implementation(const FGameplayEffectSpec& Spec) const
@@ -15,8 +13,7 @@ float UCalc_LossEnergy::CalculateBaseMagnitude_Implementation(const FGameplayEff
 
 	if (!Ability) 
 	{
-		return -2.f;
+		return -1.f;
 	}
-	return Ability->Cost;
-	
+	return Ability->CostAbility;
 }

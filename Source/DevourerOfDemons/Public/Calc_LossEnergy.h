@@ -14,11 +14,6 @@ class DEVOUREROFDEMONS_API UCalc_LossEnergy : public UGameplayModMagnitudeCalcul
 {
 	GENERATED_BODY()
 
-	UCalc_LossEnergy();
-
 	float CalculateBaseMagnitude_Implementation(const FGameplayEffectSpec& Spec) const override;
-
-
-
 	
 };
